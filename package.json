@@ -1,0 +1,35 @@
+{
+  "name": "festival_musica",
+  "version": "1.0.0",
+  "description": "Aprendiendo Sass y Gulp",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AgustinPalmaM/festival_musica.git"
+  },
+  "author": "Agustin Palma M",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AgustinPalmaM/festival_musica/issues"
+  },
+  "homepage": "https://github.com/AgustinPalmaM/festival_musica#readme",
+  "devDependencies": {
+    "dart-sass": "^1.25.0",
+    "gulp": "^4.0.2",
+    "gulp-notify": "^4.0.0",
+    "gulp-sass": "^4.1.0",
+    "node-sass": "^6.0.0"
+  },
+  "dependencies": {
+    "gulp-imagemin": "^7.1.0"
+  },
+  "keywords": [
+    "SASS",
+    "Gulp",
+    "Web",
+    "Design"
+  ]
+}
