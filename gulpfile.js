@@ -3,12 +3,14 @@ const sass = require("gulp-sass"); // cuando no hay llaves significa que hay sol
 const imagemin = require("gulp-imagemin");
 const notify = require("gulp-notify");
 const webp = require("gulp-webp");
+const concat = require("gulp-concat");
 
 // Funcion que compila sass
 
 const paths = {
     imagenes: "src/img/**/*",
-    scss: "src/scss/**/*.scss"
+    scss: "src/scss/**/*.scss",
+    js: "src/js/**/*.js"
 }
 
 function css() {
@@ -23,6 +25,13 @@ function minificarcss() {
             outputStyle: "compressed"
         }))
         .pipe(dest("./build/css"))
+}
+
+function javascript() {
+    return src(paths.js)
+        .pipe(concat("bundle.js"))
+        .pipe(dest("./build/js"))
+        .pipe(notify({ message: "Javascript compilado" }))
 }
 
 function imagenes() {
@@ -41,6 +50,7 @@ function version_webp() {
 
 function watch_archivo() {
     watch(paths.scss, css);
+    watch(paths.js, javascript);
 }
 
 
@@ -50,4 +60,4 @@ exports.minificarcss = minificarcss;
 exports.imagenes = imagenes;
 exports.watch_archivo = watch_archivo;
 
-exports.default = series(css, imagenes, version_webp, watch_archivo);
+exports.default = series(css, javascript, imagenes, version_webp, watch_archivo);
