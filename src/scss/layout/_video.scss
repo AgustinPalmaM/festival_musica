@@ -2,6 +2,8 @@
     position: relative;
     max-height: 70rem;
     overflow: hidden;
+    z-index: -1;
+    box-shadow: 0 .4rem .4rem #444;
     .overlay {
         position: absolute;
         width: 100%;
